@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 
-
-const connection = mongoose.connect("mongodb://127.0.0.1:27017/authnxm")
+const url=process.env.URL
+const connection = mongoose.connect(url)
 
 
 module.exports = {

@@ -2,7 +2,7 @@ const express = require("express")
 const jwt = require("jsonwebtoken")
 const {connection} = require("./config/db")
 const {UserModel} = require("./models/User.model")
-
+const PORT=process.env.PORT || 8080;
 const app = express();
 
 app.use(express.json())
@@ -75,7 +75,7 @@ app.get("/contact", (req, res) => {
     res.send("Out contact data....")
 })
 
-app.listen(8080, async () => {
+app.listen(PORT, async () => {
     try{
         await connection;
         console.log("Connected to DB Successfully")
